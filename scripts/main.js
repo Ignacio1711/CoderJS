@@ -89,9 +89,30 @@ while (isNaN(cantEstablecimientos) ||  cantEstablecimientos.trim()==="" || cantE
     cantEstablecimientos = prompt("Ingresa la cantidad de establecimientos de su empresa: "); 
     
 }
-alert("Perfecto!")
+
 cantEstablecimientos = cantEstablecimientos;
 
+// Declaro la clase Establecimiento
+ class Establecimiento
+ {
+    constructor (id, nombre, ciudad)
+    {
+        this.id = id;
+        this.nombre = nombre.toUpperCase();
+        this.ciudad = ciudad.toUpperCase();
+    }
+ }
+
+const listaEstablecimiento = [];
+
+// Por cada establecimiento ingresado solicito el nombre y la ciudad
+for (let i = 0; i < cantEstablecimientos ; i++) {
+        let idEstab = i;
+        let nombreEstab = prompt("Ingrese el nombre del establecimiento N° "+ i);
+        let ciudadEstab = prompt("Ingrese la ciudad del establecimiento N° "+i);
+        listaEstablecimiento.push(new Establecimiento (idEstab, nombreEstab, ciudadEstab) );
+}
+alert("Perfecto!")
 
 // Valido la cantidad de  normas ingresada
 cantNormas = prompt("Ingresa la cantidad de normas certificadas: "); 
@@ -135,6 +156,11 @@ console.log("Nombre de la empresa: " + nombreEmpresa.toUpperCase() );
 console.log("Monto base de implementación (en dólares): $" + mtoImplementacionBaseUsd);
 console.log("Cotización del dólar blue: $" + cotizActualDolar);
 console.log("Cantidad de establecimientos: " + cantEstablecimientos);
+// Muestro los establecimientos ingresados
+for (const estab of listaEstablecimiento)
+{
+    console.log("Establecimiento: " +  estab.id + " - " + estab.nombre + "-" + estab.ciudad);
+}
 console.log("Cantidad de normas certificadas: " + cantNormas);
 console.log("Cantidad de usuarios: " + cantUsuarios);
 console.log("Cantidad de documentos: " + cantDocumentos);
