@@ -15,13 +15,15 @@ let cantDocumentos=0;
 const cantBaseDocumentos=100;
 
 
-// Función de validación de datos
 
+/**************  BEGIN VALIDATION FUNCTIONS *******************/
+
+
+//Validación de datos
 let message = "";
 
-function validaIngreso (valor, tipo)
-{
-    
+function validaIngreso(valor, tipo)
+{    
     if (valor === null ||   valor === "") 
     {
         message = "El dato solicitado no puede estar vacío."
@@ -43,9 +45,54 @@ function validaIngreso (valor, tipo)
 }
 
 
-// Solicito al usuario que ingrese los parámetros
+function userValidation(usrName, usrPassword)
+{
+     for (let i = 0; i < lstUsers.length; i++) {
+      if (lstUsers[i].usrName === usrName && lstUsers[i].usrPassword === usrPassword)
+      {
+          return true;
+      }            
+    }
+}
 
-alert("Bienvenido, para realizar la cotización por favor completa los datos que te pedimos a continuación: ");
+/**************  END VALIDATION FUNCTIONS *******************/
+
+// Welcome
+
+alert("Bienvenido al sistema de gestión de cotizaciones. \nLuego de iniciar sesión, seleccione el cliente y servicio a cotizar.")
+
+// Login
+
+let userName = prompt("Ingrese su usuario:");
+let userPassword = prompt("Ingrese su contraseña:");
+
+class Users
+{
+   constructor (usrName, usrPassword)
+   {
+       this.usrName = usrName;
+       this.usrPassword = usrPassword;
+      
+   }
+}
+
+//  Hardcoded users list 
+
+const lstUsers = [
+    {usrName:"iprieto", usrPassword: "123456"},
+    {usrName:"mramos", usrPassword: "12345678"},
+    {usrName: "lvergara", usrPassword: "lvergara123" }
+]
+
+if (!userValidation(userName, userPassword))
+{
+    alert("ERROR - Verifique en consola los detalles");
+    throw new Error("Su usuario o contraseña no son válidos");
+}
+else
+{
+    alert("INICIO DE SESIÓN EXITOSO!");
+}
 
 
 //Valido el nombre de la empresa
