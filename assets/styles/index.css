@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+header{
+    height: 10vh;
+}
+main{
+    height: 80vh;
+    padding: 1rem;
+}
+footer{
+    height: 10vh;
+    background-color: darkslategrey;
+    color: white;
+    padding: 1rem;
+}
+
+.usrInfo{
+    font-weight: bold;
+}
+
+#price p{
+    font-weight: bold;
+    
+}
+

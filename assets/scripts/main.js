@@ -92,6 +92,9 @@ if (!userValidation(userName, userPassword))
 else
 {
     alert("INICIO DE SESIÓN EXITOSO!");
+    const usrInfo = document.getElementById("usrInfoDescription");
+    usrInfo.innerHTML = `<p>Bienvenido: ${userName}</p>`;
+    
 }
 
 
@@ -198,19 +201,30 @@ alert("Perfecto!")
 
 cantDocumentos = cantDocumentos;
 
-
-console.log("Nombre de la empresa: " + nombreEmpresa.toUpperCase() );
-console.log("Monto base de implementación (en dólares): $" + mtoImplementacionBaseUsd);
-console.log("Cotización del dólar blue: $" + cotizActualDolar);
-console.log("Cantidad de establecimientos: " + cantEstablecimientos);
+ const quotationParameters = document.getElementById("quotationParameters");
+ quotationParameters.innerHTML = `<h4> Datos para la cotización </h4>
+    <p>Nombre de la empresa: ${nombreEmpresa.toUpperCase()} </p>
+    <p>Monto base de implementación (en dólares): u$s ${mtoImplementacionBaseUsd} </p>
+    <p>Cotización del dólar blue: $ ${cotizActualDolar} </p>
+    <p>Cantidad de establecimientos:  ${cantEstablecimientos} </p>
+    `
 // Muestro los establecimientos ingresados
 for (const estab of listaEstablecimiento)
 {
-    console.log("Establecimiento: " +  estab.id + " - " + estab.nombre + "-" + estab.ciudad);
+    const branchP = document.createElement("p");
+    branchP.innerText= `Establecimiento: ${estab.id}  - ${estab.nombre} - ${estab.ciudad}`
+    quotationParameters.appendChild(branchP);
 }
-console.log("Cantidad de normas certificadas: " + cantNormas);
-console.log("Cantidad de usuarios: " + cantUsuarios);
-console.log("Cantidad de documentos: " + cantDocumentos);
+const standardNumber = document.createElement("p");
+standardNumber.innerText = `Cantidad de normas certificadas: ${cantNormas}`
+quotationParameters.appendChild(standardNumber);
+const usersNumber = document.createElement("p");
+usersNumber.innerText = `Cantidad de usuarios:  ${cantUsuarios}`
+quotationParameters.appendChild(usersNumber);
+const documentNumber = document.createElement("p");
+documentNumber.innerText = `Cantidad de documentos:  ${cantDocumentos}`
+quotationParameters.appendChild(documentNumber);
+
 
 function calculaImporte ()
 {
@@ -261,5 +275,9 @@ function calculaImporte ()
     return valorFinal;
 }
 
-console.log ("De acuerdo con los datos ingresados el valor es: " + calculaImporte());
+const price = document.getElementById("price");
+ price.innerHTML = `<h4> Precio de la cotización</h4>
+    <p>De acuerdo con los parámetros ingresados, el valor es: $ ${calculaImporte()} </p>`
+
+
 
