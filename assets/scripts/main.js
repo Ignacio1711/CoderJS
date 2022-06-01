@@ -97,6 +97,59 @@ function usdPriceValidation() {
         return cotizActualDolar =inputUsDolarPrice.value ;
     }
 }
+function branchQuantityValidation() {
+    const inputBranchsQuantity = document.getElementById("inputBranchsQuantity");
+    if (inputBranchsQuantity.value.trim() === "" ||  isNaN(inputBranchsQuantity.value) ||   inputBranchsQuantity.value<= 0)
+    {
+        const lblBranchsQuantity = document.getElementById("lblBranchsQuantity");
+        lblBranchsQuantity.style.display = "block";
+        lblBranchsQuantity.innerText="La cantidad  de establecimientos debe ser mayor a 0 (cero)";
+    }
+    else
+    {
+        return cantEstablecimientos =lblBranchsQuantity.value ;
+    }
+}
+function standardQuantityValidation() {
+    const inputStandardsQuantity = document.getElementById("inputStandardsQuantity");
+    if (inputStandardsQuantity.value.trim() === "" ||  isNaN(inputStandardsQuantity.value))
+    {
+        const lblStandardsQuantity = document.getElementById("lblStandardsQuantity");
+        lblStandardsQuantity.style.display = "block";
+        lblStandardsQuantity.innerText="La cantidad  de normas debe ser válida";
+    }
+    else
+    {
+        return cantNormas =inputStandardsQuantity.value ;
+    }
+}
+function usersQuantityValidation() {
+    const inputUsersQuantity = document.getElementById("inputUsersQuantity");
+    if (inputUsersQuantity.value.trim() === "" ||  isNaN(inputUsersQuantity.value ||   inputUsersQuantity.value<= 0))
+    {
+        const lblUsersQuantity = document.getElementById("lblUsersQuantity");
+        lblUsersQuantity.style.display = "block";
+        lblUsersQuantity.innerText="La cantidad  de usuarios debe ser mayor a cero (0).";
+    }
+    else
+    {
+        return cantUsuarios =inputUsersQuantity.value ;
+    }
+}
+function documentsQuantityValidation() {
+    const inputDocumentsQuantity = document.getElementById("inputDocumentsQuantity");
+    if (inputDocumentsQuantity.value.trim() === "" ||  isNaN(inputDocumentsQuantity.value ||   inputDocumentsQuantity.value<= 0))
+    {
+        const lblDocumentsQuantity = document.getElementById("lblDocumentsQuantity");
+        lblDocumentsQuantity.style.display = "block";
+        lblDocumentsQuantity.innerText="La cantidad  de documentos debe ser mayor a cero (0).";
+    }
+    else
+    {
+        return cantDocumentos =inputDocumentsQuantity.value ;
+    }
+}
+ 
  
 
 /**************  END VALIDATION FUNCTIONS *******************/
@@ -200,6 +253,10 @@ btnSoftwareCalc.onclick = () =>{
     companyValidation();
     baseAmountValidation();
     usdPriceValidation();
+    branchQuantityValidation();
+    standardQuantityValidation();
+    usersQuantityValidation();
+    documentsQuantityValidation();
     
 }
 
@@ -210,76 +267,6 @@ btnSoftwareClean.onclick = () =>{
 
 
 
-// // Valido la cantidad de  establecimientos ingresada
-// cantEstablecimientos = prompt("Ingresa la cantidad de establecimientos de su empresa: "); 
-
-// while (isNaN(cantEstablecimientos) ||  cantEstablecimientos.trim()==="" || cantEstablecimientos === null || cantEstablecimientos<=0) 
-// {
-//     alert("La cantidad debe ser un número y mayor que 0");
-//     cantEstablecimientos = prompt("Ingresa la cantidad de establecimientos de su empresa: "); 
-    
-// }
-
-// cantEstablecimientos = cantEstablecimientos;
-
-// // Declaro la clase Establecimiento
-//  class Establecimiento
-//  {
-//     constructor (id, nombre, ciudad)
-//     {
-//         this.id = id;
-//         this.nombre = nombre.toUpperCase();
-//         this.ciudad = ciudad.toUpperCase();
-//     }
-//  }
-
-// const listaEstablecimiento = [];
-
-// // Por cada establecimiento ingresado solicito el nombre y la ciudad
-// for (let i = 0; i < cantEstablecimientos ; i++) {
-//         let idEstab = i;
-//         let nombreEstab = prompt("Ingrese el nombre del establecimiento N° "+ i);
-//         let ciudadEstab = prompt("Ingrese la ciudad del establecimiento N° "+i);
-//         listaEstablecimiento.push(new Establecimiento (idEstab, nombreEstab, ciudadEstab) );
-// }
-// alert("Perfecto!")
-
-// // Valido la cantidad de  normas ingresada
-// cantNormas = prompt("Ingresa la cantidad de normas certificadas: "); 
-
-// while (isNaN(cantNormas) ||  cantNormas.trim()==="" || cantNormas === null) 
-// {
-//     alert("La cantidad debe ser un número ");
-//     cantNormas = prompt("Ingresa la cantidad de normas certificadas: "); 
-    
-// }
-// alert("Perfecto!")
-// cantNormas = cantNormas;
-
-// // Valido la cantidad de  usuarios ingresada
-// cantUsuarios = prompt("Ingresa la cantidad de usuarios de su empresa: "); 
-
-// while (isNaN(cantUsuarios) ||  cantUsuarios.trim()==="" || cantUsuarios === null || cantUsuarios<=0) 
-// {
-//     alert("La cantidad debe ser un número y mayor que 0");
-//     cantUsuarios = prompt("Ingresa la cantidad de usuarios de su empresa: "); 
-    
-// }
-// alert("Perfecto!")
-// cantUsuarios = cantUsuarios;
-
-// // Valido la cantidad de  documentos  ingresada
-// cantDocumentos = prompt("Ingresa la cantidad de documentos de su empresa: "); 
-
-// while (isNaN(cantDocumentos) ||  cantDocumentos.trim()==="" || cantDocumentos === null || cantDocumentos<=0) 
-// {
-//     alert("La cantidad debe ser un número y mayor que 0");
-//     cantDocumentos = prompt("Ingresa la cantidad de documentos de su empresa: "); 
-    
-// }
-// alert("Perfecto!")
-
-// cantDocumentos = cantDocumentos;
 
 //  const quotationParameters = document.getElementById("quotationParameters");
 //  quotationParameters.innerHTML = `<h4> Datos para la cotización </h4>
