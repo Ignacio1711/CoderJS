@@ -29,11 +29,48 @@
             <article id="usrInfoDescription">
                 <p>Por favor inicia sesión para comenzar</p>               
             </article>
-        </section>
-        <section>
-            <article id="quotationParameters">
-
+            <article id="usrLogin">
+                <form action="" id="frmUserData">
+                    <label for="inputUser" id="lblUser">Usuario</label>
+                    <input type="text" name="inputUser" id="inputUser">
+                    <label for="inputPass" id="lblpass">Contraseña</label>
+                    <input type="password" name="inputPass" id="inputPass" required>
+                    <input type="button" id="btnLogin" value="Iniciar sesión" required>
+                </form>
             </article>
+        </section>
+        <section id="servicesSection">
+            <article id="services">
+                <h3 class="services__heading" id="servicesHeading"> Servicios a cotizar</h3>
+                <input type="button" class="services__button" id="btnServiceSoftware" value="Implementación de Software" >
+                <input type="button" class="services__button" id="btnServiceAudit" value="Servicio de Auditoría" >
+                <input type="button" class="services__button" id="btnServiceConsultant" value="Servicio de consultoría" >
+            </article>
+            <article >
+                <form action="" id="frmSoftwareParameters">
+                    <h4 class="parameters__heading" id="parametersHeading">Completa los datos requeridos</h4>
+                    <input type="text" placeholder="Nombre de la empresa" id="inputCompanyName" >
+                    <label for="inputCompanyName" class="frmSoftwareParameters__lblError" id="lblCompanyName"></label>
+                    <input type="number" placeholder="Monto base en USD" id="inputBaseAmount">
+                    <label for="inputBaseAmount" class="frmSoftwareParameters__lblError" id="lblBaseAmount"></label>
+                    <input type="number" placeholder="Cotización del dólar" id="inputUsDolarPrice">
+                    <label for="inputUsDolarPrice" class="frmSoftwareParameters__lblError" id="lblUsDolarPrice"></label>
+                    <input type="number" placeholder="Cantidad de establecimientos" id="inputBranchsQuantity">
+                    <label for="inputBranchsQuantity" class="frmSoftwareParameters__lblError" id="lblBranchsQuantity"></label>
+                    <input type="number" placeholder="Cantidad de normas certificadas" id="inputStandardsQuantity">
+                    <label for="inputStandardsQuantity" class="frmSoftwareParameters__lblError" id="lblStandardsQuantity"></label>
+                    <input type="number" placeholder="Cantidad de usuarios" id="inputUsersQuantity">
+                    <label for="inputUsersQuantity" class="frmSoftwareParameters__lblError" id="lblUsersQuantity"></label>
+                    <input type="number" placeholder="Cantidad de documentos" id="inputDocumentsQuantity">
+                    <label for="inputDocumentsQuantity" class="frmSoftwareParameters__lblError" id="lblDocumentsQuantity"></label>
+                    <div class="frmSoftwareParameters__btnContainer">
+                        <input type="button" class="frmSoftwareParameters__button" value="Cotizar" id="btnSoftwareCalc">               
+                        <input type="reset" class="frmSoftwareParameters__button" value="Limpiar" id="btnSoftwareClean">
+                    </div>
+            
+
+                </form>
+            </article>     
         </section>
         <section>
             <article id="price">
