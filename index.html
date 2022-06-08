@@ -30,13 +30,33 @@
                 <p>Por favor inicia sesión para comenzar</p>               
             </article>
             <article id="usrLogin">
-                <form action="" id="frmUserData">
+                <form action="" id="frmUserData" >
                     <label for="inputUser" id="lblUser">Usuario</label>
                     <input type="text" name="inputUser" id="inputUser">
                     <label for="inputPass" id="lblpass">Contraseña</label>
                     <input type="password" name="inputPass" id="inputPass" required>
-                    <input type="button" id="btnLogin" value="Iniciar sesión" required>
+                    <input type="button" id="btnLogin" value="Iniciar sesión"  required>
                 </form>
+                <div>
+                    <a href="#openModal">Registrarse</a>
+                </div>
+                <div id="openModal" class="modalDialog">
+                    <div>
+                        <a href="#close" title="Close" class="close">X</a>
+                        <h2>Nuevo usuario</h2>
+                        <form action="" id="formNewUserData" class="frmUserData">
+                            <label for="inputNewUser" id="lblNewUser">Usuario</label>
+                            <input type="text" name="inputNewUser" id="inputNewUser">
+                            <label for="inputnewUserPass" id="lblNewUserPass">Ingresa una contraseña</label>
+                            <input type="password" name="inputnewUserPass" id="inputnewUserPass" required>
+                            <label for="inputnewUserPass2" id="lblNewUserPass2">Repite la contraseña</label>
+                            <input type="password" name="inputnewUserPass2" id="inputnewUserPass2" required>
+                            <label for="inputnewUserEmail" id="lblNewUserEmail">Ingresa tu email</label>
+                            <input type="email" name="inputnewUserEmail" id="inputnewUserEmail" required>
+                            <input type="button" id="btnRegister" value="Registrarse" class="btnLoginRegister" required>
+                        </form>
+                    </div>
+                </div>
             </article>
         </section>
         <section id="servicesSection">
