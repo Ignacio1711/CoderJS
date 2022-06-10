@@ -39,9 +39,10 @@ function userValidation(usrName, usrPassword) {
     let listStoragedUsers = JSON.parse(localStorage.getItem("usuarios")); //parseo el JSON para buscar la coincidencia del usuario que se loguea
 
     for (let i = 0; i < localStorage.length; i++) {
-        if (listStoragedUsers[i].usrName === usrName && listStoragedUsers[i].usrPassword === usrPassword) {
-            return true;
-        }
+        
+         if (listStoragedUsers[i].usrName === usrName && listStoragedUsers[i].usrPassword === usrPassword) {
+             return true;
+         }
     }
 }
 
@@ -85,8 +86,10 @@ function branchQuantityValidation() {
         const lblBranchsQuantity = document.getElementById("lblBranchsQuantity");
         lblBranchsQuantity.style.display = "block";
         lblBranchsQuantity.innerText = "La cantidad  de establecimientos debe ser mayor a 0 (cero)";
-    } else {
-        return cantEstablecimientos = lblBranchsQuantity.value;
+    } 
+    else
+    {
+        return cantEstablecimientos = inputBranchsQuantity.value;
     }
 }
 
@@ -270,40 +273,23 @@ function calculaImporte() {
 
     // Establecimientos
 
-    if (cantEstablecimientos > cantBaseEstablecimientos) // si es mayor a la cantidad base lo convierto en porcentaje (10% por cada uno de más) y se lo sumo al valor.
-    {
-        cantEstablecimientos = cantEstablecimientos - cantBaseEstablecimientos // le resto la base
-
-        valorEstab = (valorParcial * (cantEstablecimientos * 0.1))
-    }
-
+    cantEstablecimientos > cantBaseEstablecimientos == true ? valorEstab = ((cantEstablecimientos - cantBaseEstablecimientos)*0.1) * valorParcial : false;
+ 
     // Normas
-    if (cantNormas > cantBaseNorma) // si es mayor a la cantidad base lo convierto en porcentaje (5% por cada norma de más) y se lo sumo al valor.
-    {
-        cantNormas = cantNormas - cantBaseNorma // le resto la base
 
-        valorNormas = (valorParcial * (cantNormas * 0.05))
-    }
+    cantNormas > cantBaseNorma == true && (valorNormas=((cantNormas - cantBaseNorma)*0.05) * valorParcial);
 
-    // Usuarios
-    if (cantUsuarios > cantBaseUsuarios) // si es mayor a la cantidad base lo convierto en porcentaje (12% por cada 30 usuarios de más) y se lo sumo al valor.
-    {
-        cantUsuarios = cantUsuarios - cantBaseUsuarios;
+     // Usuarios
 
-        valorUsuarios = (valorParcial * (Math.trunc(cantUsuarios / 30) * 0.12)); // Divido los usuarios de más por 30, tomo su parte entera y la multiplico por  el porcentaje.
-    }
+    cantUsuarios > cantBaseUsuarios == true ? valorUsuarios = (valorParcial * (Math.trunc((cantUsuarios - cantBaseUsuarios) / 30) * 0.12)) : false;
 
     // Documentos 
 
-    if (cantDocumentos > cantBaseDocumentos) // si es mayor a la cantidad base lo convierto en porcentaje (5% por cada 30 documentos de más) y se lo sumo al valor.
-    {
-        cantDocumentos = cantDocumentos - cantBaseDocumentos;
+    cantDocumentos > cantBaseDocumentos == true ? valorDocs=(valorParcial * (Math.trunc((cantDocumentos - cantBaseDocumentos) / 30) * 0.05)) : false
 
-
-        valorDocs = (valorParcial * (Math.trunc(cantDocumentos / 30) * 0.05)); // Divido los usuarios de más por 30, tomo su parte entera y la multiplico por  el porcentaje.
-    }
-
+  
     valorFinal = valorParcial + valorEstab + valorNormas + valorUsuarios + valorDocs;
 
     return valorFinal;
 }
+
