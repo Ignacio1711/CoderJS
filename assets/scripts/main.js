@@ -16,25 +16,6 @@ const cantBaseDocumentos = 100;
 
 /**************  BEGIN VALIDATION FUNCTIONS *******************/
 
-//Validación de datos
-let message = "";
-
-function validaIngreso(valor, tipo) {
-    if (valor === null || valor === "") {
-        message = "El dato solicitado no puede estar vacío."
-        return message;
-    } else {
-        if (typeof (valor) === tipo) {
-            message = "Perfecto!"
-            return message;
-        } else {
-            message = "Verifique el dato ingresado!";
-            return message;
-        }
-    }
-}
-
-
 function userValidation(usrName, usrPassword) {
     let listStoragedUsers = JSON.parse(localStorage.getItem("usuarios")); //parseo el JSON para buscar la coincidencia del usuario que se loguea
 
@@ -193,12 +174,20 @@ btnLogin.onclick = () => {
     let userPassword = inputPass.value;
 
     if (userName === "" || userPassword === "") {
-        alert("El usuario y la contraseña son obligatorios");
+        swal({
+            icon: "error",
+            title:"ERROR",
+            text: "El usuario y la contraseña son obligatorios"
+        });
     } 
     else 
     {
         if (!userValidation(userName, userPassword)) {
-            alert("Su usuario o contraseña no son válidos");
+            swal({
+                icon: "error",
+                title:"ERROR",
+                text: "Su usuario o contraseña no son válidos"
+            });
         } 
         else
         {
