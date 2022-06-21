@@ -118,7 +118,11 @@ function showServices() {
 
 function hideFormSoftware() {
     const formSoftware = document.getElementById("frmSoftwareParameters");
-    formSoftware.style.display = 'none'
+    formSoftware.style.display = 'none';
+    const softwareReferences = document.getElementById("softwareReferences");
+    softwareReferences.style.display = 'none';
+    const price = document.getElementById("price");
+    price.style.display = 'none';
 }
 
 function showFormSoftware() {
@@ -132,6 +136,29 @@ function hideLabels() {
     for (let i = 0; i < labels.length; i++) {
         labels[i].style.display = 'none';
     }
+}
+
+// async references load 
+
+async function showReferences () {
+    const  resp =await fetch('assets/data/references.json');
+    const data = await resp.json();
+
+    const contenedor = document.getElementById("softwareReferences");
+    contenedor.style.display = 'flex';
+    contenedor.style.flexDirection = 'column';
+    contenedor.innerHTML= `<h4>Referencias - Valores base </h4>`;
+
+    data.forEach((ref)=>{
+        const div = document.createElement('div');
+        div.innerHTML =`<p style="font-weight: bold">${ref.titulo}</p>
+                                    <p>Cantidad base: ${ref.base} </p>
+                                    <p>Detalle: ${ref.detalle} </p>`;
+                                    
+     contenedor.append(div);   
+
+    }
+    )
 }
 
 /*************** END FRONTEND FUNCTIONS **************** */
@@ -207,6 +234,7 @@ let btnServiceConsultant = document.getElementById("btnServiceConsultant");
 
 btnServiceSoftware.onclick = () => {
     showFormSoftware();
+    showReferences();
 }
 
 btnServiceAudit.onclick = () => {
@@ -229,6 +257,8 @@ btnSoftwareCalc.onclick = () => {
     documentsQuantityValidation();
     // pasó las validaciones de todos los campos - > realizo el cálculo
     const price = document.getElementById("price");
+    price.style.display = 'flex';
+    price.style.flexDirection = 'column';
     price.innerHTML = `<h4> Precio de la cotización</h4>
     <p>De acuerdo con los parámetros ingresados, el valor es: $ ${calculaImporte()} </p>`
 
@@ -246,6 +276,8 @@ btnSoftwareClean.onclick = () => {
     cantUsuarios = 0;
     cantDocumentos = 0;
     const price = document.getElementById("price");
+    price.style.display = 'flex';
+    price.style.flexDirection = 'column';
     price.innerHTML = `<h4> Precio de la cotización</h4>
     <p>De acuerdo con los parámetros ingresados, el valor es: $ 0.00</p>`
 

@@ -1,0 +1,30 @@
+[
+  {
+  "id": 1,
+  "titulo": "Usuarios",
+  "base": 60,
+  "detalle": "12% cada 30 usuarios extra",
+  "estado": "activo"
+  },
+  {
+  "id": 2,
+  "titulo": "Establecimientos",
+  "base": 1,
+  "detalle": "10% por cada establecimiento extra",
+  "estado": "activo"
+  },
+  {
+  "id": 3,
+  "titulo": "Normas",
+  "base": 1,
+  "detalle": "5% por cada norma extra",
+  "estado": "activo"
+  },
+  {
+  "id": 4,
+  "titulo": "Documentos",
+  "base": 100,
+  "detalle": "5% cada 30  documentos extra",
+  "estado": "activo"
+  } 
+]
