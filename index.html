@@ -99,24 +99,27 @@
             <article>
                 <form action="" id="frmSoftwareParameters">
                     <h4 class="parameters__heading" id="parametersHeading">Completa los datos requeridos</h4>
-                    <input type="text" placeholder="Nombre de la empresa" id="inputCompanyName">
-                    <label for="inputCompanyName" class="frmSoftwareParameters__lblError" id="lblCompanyName"></label>
-                    <input type="number" placeholder="Monto base en USD" id="inputBaseAmount">
-                    <label for="inputBaseAmount" class="frmSoftwareParameters__lblError" id="lblBaseAmount"></label>
-                    <input type="number" placeholder="Cotización del dólar" id="inputUsDolarPrice">
-                    <label for="inputUsDolarPrice" class="frmSoftwareParameters__lblError" id="lblUsDolarPrice"></label>
-                    <input type="number" placeholder="Cantidad de establecimientos" id="inputBranchsQuantity">
-                    <label for="inputBranchsQuantity" class="frmSoftwareParameters__lblError"
-                        id="lblBranchsQuantity"></label>
-                    <input type="number" placeholder="Cantidad de normas certificadas" id="inputStandardsQuantity">
-                    <label for="inputStandardsQuantity" class="frmSoftwareParameters__lblError"
-                        id="lblStandardsQuantity"></label>
-                    <input type="number" placeholder="Cantidad de usuarios" id="inputUsersQuantity">
-                    <label for="inputUsersQuantity" class="frmSoftwareParameters__lblError"
-                        id="lblUsersQuantity"></label>
-                    <input type="number" placeholder="Cantidad de documentos" id="inputDocumentsQuantity">
-                    <label for="inputDocumentsQuantity" class="frmSoftwareParameters__lblError"
-                        id="lblDocumentsQuantity"></label>
+                    <input type="text" placeholder="Nombre de la empresa" id="softInputCompanyName">
+                    <label for="softInputCompanyName" class="frmSoftwareParameters__lblError" id="softLblCompanyName"></label>
+
+                    <input type="number" placeholder="Monto base en USD" id="softInputBaseAmount">
+                    <label for="softInputBaseAmount" class="frmSoftwareParameters__lblError" id="softLblBaseAmount"></label>
+
+                    <input type="number" placeholder="Cotización del dólar" id="softInputUsDolarPrice">
+                    <label for="softInputUsDolarPrice" class="frmSoftwareParameters__lblError" id="softLblUsDolarPrice"></label>
+
+                    <input type="number" placeholder="Cantidad de establecimientos" id="softInputBranchsQuantity">
+                    <label for="softInputBranchsQuantity" class="frmSoftwareParameters__lblError"   id="softLblBranchsQuantity"></label>
+
+                    <input type="number" placeholder="Cantidad de normas certificadas" id="softInputStandardsQuantity">
+                    <label for="softInputStandardsQuantity" class="frmSoftwareParameters__lblError"  id="softLblStandardsQuantity"></label>
+
+                    <input type="number" placeholder="Cantidad de usuarios" id="softInputUsersQuantity">
+                    <label for="softInputUsersQuantity" class="frmSoftwareParameters__lblError"  id="softLblUsersQuantity"></label>
+
+                    <input type="number" placeholder="Cantidad de documentos" id="softInputDocumentsQuantity">
+                    <label for="softInputDocumentsQuantity" class="frmSoftwareParameters__lblError" id="softLblDocumentsQuantity"></label>
+
                     <div class="frmSoftwareParameters__btnContainer">
                         <input type="button" class="btn btn-primary" value="Cotizar" id="btnSoftwareCalc">
                         <input type="reset" class="btn btn-primary" value="Limpiar" id="btnSoftwareClean">
@@ -129,27 +132,57 @@
             <article>
                 <form action="" id="frmAuditParameters">
                     <h4 class="parameters__heading" id="parametersHeading">Completa los datos requeridos</h4>
-                    <input type="text" placeholder="Nombre de la empresa" id="inputCompanyName">
-                    <label for="inputCompanyName" class="frmSoftwareParameters__lblError" id="lblCompanyName"></label>
-                    <input type="number" placeholder="Monto base en USD" id="inputBaseAmount">
-                    <label for="inputBaseAmount" class="frmSoftwareParameters__lblError" id="lblBaseAmount"></label>
-                    <input type="number" placeholder="Cotización del dólar" id="inputUsDolarPrice">
-                    <label for="inputUsDolarPrice" class="frmSoftwareParameters__lblError" id="lblUsDolarPrice"></label>
-                    <input type="number" placeholder="Cantidad de establecimientos" id="inputBranchsQuantity">
-                    <label for="inputBranchsQuantity" class="frmSoftwareParameters__lblError"
-                        id="lblBranchsQuantity"></label>
-                    <input type="number" placeholder="Cantidad de normas certificadas" id="inputStandardsQuantity">
-                    <label for="inputStandardsQuantity" class="frmSoftwareParameters__lblError"
-                        id="lblStandardsQuantity"></label>
-                    <input type="number" placeholder="Cantidad de usuarios" id="inputUsersQuantity">
-                    <label for="inputUsersQuantity" class="frmSoftwareParameters__lblError"
-                        id="lblUsersQuantity"></label>
-                    <input type="number" placeholder="Cantidad de documentos" id="inputDocumentsQuantity">
-                    <label for="inputDocumentsQuantity" class="frmSoftwareParameters__lblError"
-                        id="lblDocumentsQuantity"></label>
-                    <div class="frmSoftwareParameters__btnContainer">
-                        <input type="button" class="btn btn-primary" value="Cotizar" id="btnSoftwareCalc">
-                        <input type="reset" class="btn btn-primary" value="Limpiar" id="btnSoftwareClean">
+                    <input type="text" placeholder="Nombre de la empresa" id="auditInputCompanyName">
+                    <label for="auditInputCompanyName" class="frmAuditParameters__lblError" id="auditLblCompanyName"></label>
+
+                    <input type="number" placeholder="Monto base en USD" id="auditInputBaseAmount">
+                    <label for="auditInputBaseAmount" class="frmAuditParameters__lblError" id="auditLblBaseAmount"></label>
+
+                    <input type="number" placeholder="Cotización del dólar" id="auditInputUsDolarPrice">
+                    <label for="auditInputUsDolarPrice" class="frmAuditParameters__lblError" id="auditLblUsDolarPrice"></label>
+
+                    <input type="number" placeholder="Cantidad de normas certificadas" id="auditInputStandardsQuantity">
+                    <label for="auditInputStandardsQuantity" class="frmAuditParameters__lblError" id="auditLblStandardsQuantity"></label>
+
+                    <input type="number" placeholder="Cantidad de documentos" id="auditInputDocumentsQuantity">
+                    <label for="auditInputDocumentsQuantity" class="frmAuditParameters__lblError" id="auditLblDocumentsQuantity"></label>
+
+                    <input type="text" placeholder="Locación: Remota o In-situ" id="auditInputLocation">
+                    <label for="auditInputLocation" class="frmAuditParameters__lblError"   id="auditLblLocation"></label>
+
+                    <div class="frmAuditParameters__btnContainer">
+                        <input type="button" class="btn btn-primary" value="Cotizar" id="btnAuditCalc">
+                        <input type="reset" class="btn btn-primary" value="Limpiar" id="btnAuditClean">
+                    </div>
+                </form>
+            </article>
+            <article id="consultantReferences">
+                                
+            </article>
+            <article>
+                <form action="" id="frmConsultantParameters">
+                    <h4 class="parameters__heading" id="parametersHeading">Completa los datos requeridos</h4>
+                    <input type="text" placeholder="Nombre de la empresa" id="consultantInputCompanyName">
+                    <label for="consultantInputCompanyName" class="frmConsultantParameters__lblError" id="consultantLblCompanyName"></label>
+
+                    <input type="number" placeholder="Monto base en USD" id="consultantInputBaseAmount">
+                    <label for="consultantInputBaseAmount" class="frmConsultantParameters__lblError" id="consultantLblBaseAmount"></label>
+
+                    <input type="number" placeholder="Cotización del dólar" id="consultantInputUsDolarPrice">
+                    <label for="consultantInputUsDolarPrice" class="frmConsultantParameters__lblError" id="consultantLblUsDolarPrice"></label>
+
+                    <input type="number" placeholder="Cantidad de normas certificadas" id="consultantInputStandardsQuantity">
+                    <label for="consultantInputStandardsQuantity" class="frmConsultantParameters__lblError" id="consultantLblStandardsQuantity"></label>
+
+                    <input type="number" placeholder="Cantidad de documentos" id="consultantInputDocumentsQuantity">
+                    <label for="consultantInputDocumentsQuantity" class="frmConsultantParameters__lblError" id="consultantLblDocumentsQuantity"></label>
+
+                    <input type="number" placeholder="Cantidad de visitas semanales" id="consultantInputCantVisitas">
+                    <label for="consultantInputCantVisitas" class="frmConsultantParameters__lblError"   id="consultantLblCantVisitas"></label>
+
+                    <div class="frmconsultantParameters__btnContainer">
+                        <input type="button" class="btn btn-primary" value="Cotizar" id="btnConsultantCalc">
+                        <input type="reset" class="btn btn-primary" value="Limpiar" id="btnConsultantClean">
                     </div>
                 </form>
             </article>

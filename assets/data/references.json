@@ -46,13 +46,37 @@
     "detalle": "15% por cada norma extra",
     "categoria": "auditoria",
     "estado": "activo"
-    },
-    {
+   },
+  {
       "id": 7,
       "titulo": "Ubicación",
       "base": "",
       "detalle": "20% Adicional por auditoría in-situ. No incluye gastos de viaje",
       "categoria": "auditoria",
       "estado": "activo"
-      } 
+    },
+    {
+        "id": 8,
+        "titulo": "Reuniones Semanales",
+        "base": 1,
+        "detalle": "20% Adicional por reunión",
+        "categoria": "consultoria",
+        "estado": "activo"
+     } ,
+     {
+       "id": 9,
+       "titulo": "Documentos",
+       "base": 100,
+       "detalle": "5% cada 30  documentos extra",
+       "categoria": "consultoria",
+       "estado": "activo"
+       } ,
+     {
+       "id": 10,
+       "titulo": "Normas",
+       "base": 1,
+       "detalle": "15% por cada norma extra",
+       "categoria": "consultoria",
+       "estado": "activo"
+      }
 ]

@@ -49,22 +49,10 @@ footer{
     display: none;
 }
 
-/* #services input {
-    height: 100px;
-    width: 350px;
-    margin: 2rem;
-    background-color: rgb(248, 157, 29);
-    border: none;
-    font-size: 1.5em;
-    color: rgb(71, 71, 71);
-    border-radius: 3px;
-} */
-
 #frmSoftwareParameters{
     display: none;
     width: 70%;
     padding:30px;
-    /*border: solid 1px rgb(248, 157, 29); */
     border-radius: 5px;
     align-items: center;
     margin-bottom: 20px;
@@ -98,10 +86,63 @@ footer{
     display: none;
     width: 70%;
     padding:30px;
-    /*border: solid 1px rgb(248, 157, 29); */
     border-radius: 5px;
     align-items: center;
     margin-bottom: 20px;
+}
+
+#frmAuditParameters input{
+    margin: 10px;
+    width: 70%;
+    height: 50px;
+    border-bottom: darkgray solid 1px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.frmAuditParameters__btnContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+.frmAuditParameters__lblError{
+    color:red;
+    font-size: 12px;
+    text-align: left;
+    margin-left: 10px;
+}
+
+#frmConsultantParameters{
+    display: none;
+    width: 70%;
+    padding:30px;
+    border-radius: 5px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+#frmConsultantParameters input{
+    margin: 10px;
+    width: 70%;
+    height: 50px;
+    border-bottom: darkgray solid 1px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.frmconsultantParameters__btnContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+.frmConsultantParameters__lblError{
+    color:red;
+    font-size: 12px;
+    text-align: left;
+    margin-left: 10px;
 }
 
 
