@@ -2,6 +2,7 @@
 
 // Declaro e inicializo parámetros de cotización
 
+/* general parameters*/
 let nombreEmpresa = "";
 let mtoImplementacionBaseUsd = 0;
 let cotizActualDolar = 0;
@@ -9,10 +10,20 @@ let cantEstablecimientos = 0;
 const cantBaseEstablecimientos = 1;
 let cantNormas = 0;
 const cantBaseNorma = 1;
+
+/*software parameters */
 let cantUsuarios = 0;
 const cantBaseUsuarios = 60;
 let cantDocumentos = 0;
 const cantBaseDocumentos = 100;
+
+/* Audit parameters */ 
+let audRemota = true;
+
+/* Consulting parameters */
+let ReunionesSemanales = 0;
+
+
 
 /**************  BEGIN VALIDATION FUNCTIONS *******************/
 
@@ -116,11 +127,28 @@ function showServices() {
     serviceContainer.style.display = 'flex';
 }
 
-function hideFormSoftware() {
-    const formSoftware = document.getElementById("frmSoftwareParameters");
-    formSoftware.style.display = 'none';
-    const softwareReferences = document.getElementById("softwareReferences");
-    softwareReferences.style.display = 'none';
+// function hideFormSoftware() {
+//     const formSoftware = document.getElementById("frmSoftwareParameters");
+//     formSoftware.style.display = 'none';
+//     const softwareReferences = document.getElementById("softwareReferences");
+//     softwareReferences.style.display = 'none';
+//     const price = document.getElementById("price");
+//     price.style.display = 'none';
+// }
+
+function hideForm(service) {
+    if (service==="software"){
+        const formu = document.getElementById("frmSoftwareParameters");
+        formu.style.display = 'none';
+        const softwareReferences = document.getElementById("softwareReferences");
+        softwareReferences.style.display = 'none';
+    }
+    if (service==="audit"){
+        const formu = document.getElementById("frmAuditParameters");
+        formu.style.display = 'none';
+        const auditReferences = document.getElementById("auditReferences");
+        auditReferences.style.display = 'none';
+    }
     const price = document.getElementById("price");
     price.style.display = 'none';
 }
@@ -138,27 +166,64 @@ function hideLabels() {
     }
 }
 
+function showFormAudit() {
+    const formAudit = document.getElementById("frmAuditParameters");
+    formAudit.style.display = 'flex';
+    formAudit.style.flexDirection = 'column';
+}
+
+function hideFormAudit() {
+    const formAudit = document.getElementById("frmAuditParameters");
+    formAudit.style.display = 'none';
+    const auditReferences = document.getElementById("auditReferences");
+    auditReferences.style.display = 'none';
+    const price = document.getElementById("price");
+    price.style.display = 'none';
+}
+
 // async references load 
 
-async function showReferences () {
+async function showReferences (service) {
     const  resp =await fetch('assets/data/references.json');
     const data = await resp.json();
 
-    const contenedor = document.getElementById("softwareReferences");
-    contenedor.style.display = 'flex';
-    contenedor.style.flexDirection = 'column';
-    contenedor.innerHTML= `<h4>Referencias - Valores base </h4>`;
+    if (service== "software"){
+        const contenedor = document.getElementById("softwareReferences");
+        contenedor.style.display = 'flex';
+        contenedor.style.flexDirection = 'row';
+        contenedor.innerHTML= `<h4></h4>`;
 
-    data.forEach((ref)=>{
-        const div = document.createElement('div');
-        div.innerHTML =`<p style="font-weight: bold">${ref.titulo}</p>
-                                    <p>Cantidad base: ${ref.base} </p>
-                                    <p>Detalle: ${ref.detalle} </p>`;
-                                    
-     contenedor.append(div);   
-
+        data.forEach((ref)=>{
+            const div = document.createElement('div');
+            if (ref.categoria == "software") {
+                div.innerHTML =`<p style="font-weight: bold; color: black;">${ref.titulo}</p>
+                                        <p>Cantidad base: ${ref.base} </p>
+                                        <p>Detalle: ${ref.detalle} </p>`
+                                        div.className='references_details'
+                                        contenedor.append(div);   
+             }
+         }
+         )
     }
-    )
+    if (service== "audit"){
+        const contenedor = document.getElementById("auditReferences");
+        contenedor.style.display = 'flex';
+        contenedor.style.flexDirection = 'row';
+        contenedor.innerHTML= `<h4></h4>`;
+
+        data.forEach((ref)=>{
+            const div = document.createElement('div');
+            if (ref.categoria == "auditoria") {
+                div.innerHTML =`<p style="font-weight: bold; color: black;">${ref.titulo}</p>
+                                        <p>Cantidad base: ${ref.base} </p>
+                                        <p>Detalle: ${ref.detalle} </p>`
+                                        div.className='references_details'
+                                        contenedor.append(div);   
+             }
+         }
+         )
+    }
+    
 }
 
 /*************** END FRONTEND FUNCTIONS **************** */
@@ -233,12 +298,15 @@ let btnServiceAudit = document.getElementById("btnServiceAudit");
 let btnServiceConsultant = document.getElementById("btnServiceConsultant");
 
 btnServiceSoftware.onclick = () => {
+    hideForm("audit");
     showFormSoftware();
-    showReferences();
+    showReferences("software");
 }
 
 btnServiceAudit.onclick = () => {
-    hideFormSoftware();
+    hideForm("software");
+    showReferences("audit");
+    showFormAudit();
 }
 
 btnServiceConsultant.onclick = () => {

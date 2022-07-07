@@ -4,6 +4,7 @@
   "titulo": "Usuarios",
   "base": 60,
   "detalle": "12% cada 30 usuarios extra",
+  "categoria": "software",
   "estado": "activo"
   },
   {
@@ -11,6 +12,7 @@
   "titulo": "Establecimientos",
   "base": 1,
   "detalle": "10% por cada establecimiento extra",
+  "categoria": "software",
   "estado": "activo"
   },
   {
@@ -18,6 +20,7 @@
   "titulo": "Normas",
   "base": 1,
   "detalle": "5% por cada norma extra",
+  "categoria": "software",
   "estado": "activo"
   },
   {
@@ -25,6 +28,31 @@
   "titulo": "Documentos",
   "base": 100,
   "detalle": "5% cada 30  documentos extra",
+  "categoria": "software",
   "estado": "activo"
-  } 
+  } ,
+  {
+    "id": 5,
+    "titulo": "Documentos",
+    "base": 100,
+    "detalle": "5% cada 30  documentos extra",
+    "categoria": "auditoria",
+    "estado": "activo"
+    } ,
+  {
+    "id": 6,
+    "titulo": "Normas",
+    "base": 1,
+    "detalle": "15% por cada norma extra",
+    "categoria": "auditoria",
+    "estado": "activo"
+    },
+    {
+      "id": 7,
+      "titulo": "Ubicación",
+      "base": "",
+      "detalle": "20% Adicional por auditoría in-situ. No incluye gastos de viaje",
+      "categoria": "auditoria",
+      "estado": "activo"
+      } 
 ]

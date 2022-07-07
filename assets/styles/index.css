@@ -49,7 +49,7 @@ footer{
     display: none;
 }
 
-#services input {
+/* #services input {
     height: 100px;
     width: 350px;
     margin: 2rem;
@@ -58,24 +58,32 @@ footer{
     font-size: 1.5em;
     color: rgb(71, 71, 71);
     border-radius: 3px;
-}
+} */
 
 #frmSoftwareParameters{
     display: none;
-    width: 20%;
-    border: solid 1px rgb(248, 157, 29); 
+    width: 70%;
+    padding:30px;
+    /*border: solid 1px rgb(248, 157, 29); */
     border-radius: 5px;
-    text-align: center;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 #frmSoftwareParameters input{
     margin: 10px;
+    width: 70%;
+    height: 50px;
+    border-bottom: darkgray solid 1px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
 
 .frmSoftwareParameters__btnContainer{
     display: flex;
     flex-direction: row;
-   align-items: center;
+   
    
 }
 
@@ -84,6 +92,16 @@ footer{
     font-size: 12px;
     text-align: left;
     margin-left: 10px;
+}
+
+#frmAuditParameters{
+    display: none;
+    width: 70%;
+    padding:30px;
+    /*border: solid 1px rgb(248, 157, 29); */
+    border-radius: 5px;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 
@@ -155,4 +173,48 @@ transition: opacity 400ms ease-in;
 
 .btnLoginRegister{
     width: 30%;
+}
+
+i {
+    font-size: 50px;
+    color: orange;
+}
+
+.card{
+    text-align: center;
+    align-items: center;
+    display: block;
+    width: 300px;
+    margin:30px;
+}
+
+.card-title{
+    font-weight: bold;
+}
+
+.btn{
+    width: 50%;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}   
+
+.services__container{
+    display: block;
+}
+
+.services__container__card{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-content: center;
+}
+
+.references_details{
+    color:rgb(190, 122, 4);
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#softwareReferences{
+    display: none;
 }
